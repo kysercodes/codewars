@@ -181,3 +181,38 @@ function toWeirdCase(string){
 
 
 console.log(toWeirdCase('This is a test'))
+
+// The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+// What if the string is empty? Then the result should be empty object literal, {}.
+
+// solution
+
+function count(string) {
+  if(string.length === 0) {
+    return {}
+  }
+  const newObj = {};
+  const newStr = string.split("")
+  newStr.forEach((el) => {
+    if(newObj[el]) {
+    newObj[el] ++
+    } else {
+      newObj[el] = 1
+     }
+  })
+
+   return newObj
+  
+}
+
+console.log(count(""))
+
+// returning an object
+// create an empty object
+// convert string to array
+// iterate over the array
+// need a counter to keep count of elements
+// check if object has element if so add to the count
+// if not update object with  new key value pair
+// what i learned  with this if it doesnt exist set set the value to 1 thats the missing logic
