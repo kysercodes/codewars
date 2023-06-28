@@ -216,3 +216,69 @@ console.log(count(""))
 // check if object has element if so add to the count
 // if not update object with  new key value pair
 // what i learned  with this if it doesnt exist set set the value to 1 thats the missing logic
+
+
+// For a given string s find the character c (or C) with longest consecutive repetition and return:
+
+// [c, l]
+// where l (or L) is the length of the repetition. If there are two or more characters with the same l return the first in order of appearance.
+
+// For empty string return:
+
+// ["", 0]
+
+function longestRepetition(s) {
+  const newArr = [];
+  let currentChar = "";
+  let currentCount = 0;
+  let maxChar = "";
+  let maxCount = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === currentChar) {
+      currentCount++;
+    } else {
+      currentChar = s[i];
+      currentCount = 1;
+    }
+
+    if (currentCount > maxCount) {
+      maxChar = currentChar;
+      maxCount = currentCount;
+    }
+  }
+
+  newArr.push(maxChar, maxCount);
+  return newArr;
+}
+
+// Example usage:
+console.log(longestRepetition("aabbb")); // Output: ["b", 3]
+console.log(longestRepetition("aabb")); // Output: ["a", 2]
+console.log(longestRepetition("bbbaaabaaaa")); // Output: ["a", 4]
+
+// breakdown
+// Certainly! Let's go through the modified code step by step:
+
+// 1. Initialize variables:
+//    - `newArr`: An empty array to store the result.
+//    - `currentChar`: A variable to keep track of the current character being iterated.
+//    - `currentCount`: A variable to keep track of the count of consecutive repetitions of the current character.
+//    - `maxChar`: A variable to store the character with the maximum consecutive repetitions.
+//    - `maxCount`: A variable to store the count of maximum consecutive repetitions.
+
+// 2. Iterate over the string `s` using a for loop:
+//    - For each character `s[i]`:
+//      - If it is the same as the `currentChar`, increment `currentCount` since it's part of the current consecutive repetition.
+//      - If it is different from the `currentChar`, update `currentChar` to the new character and reset `currentCount` to 1, as a new consecutive 
+//      repetition has started.
+//      - Check if the `currentCount` is greater than the `maxCount`. If so, update `maxChar` with `currentChar` and `maxCount` with `currentCount`.
+//       This keeps track of the character with the maximum consecutive repetitions encountered so far.
+
+// 3. After iterating through the entire string, push `maxChar` and `maxCount` into `newArr`.
+
+// 4. Return `newArr` as the result.
+
+// In summary, the code iterates over the string and keeps track of the current character and its count of consecutive repetitions. It updates the
+// `maxChar` and `maxCount` variables whenever it encounters a longer consecutive repetition. Finally, 
+// it returns an array containing the character and count of the longest consecutive repetition found in the string.
