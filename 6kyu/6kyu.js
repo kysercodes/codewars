@@ -282,3 +282,42 @@ console.log(longestRepetition("bbbaaabaaaa")); // Output: ["a", 4]
 // In summary, the code iterates over the string and keeps track of the current character and its count of consecutive repetitions. It updates the
 // `maxChar` and `maxCount` variables whenever it encounters a longer consecutive repetition. Finally, 
 // it returns an array containing the character and count of the longest consecutive repetition found in the string.
+
+// return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
+
+// Examples
+// "1999" --> "20th"
+// "2011" --> "21st"
+// "2154" --> "22nd"
+// "2259" --> "23rd"
+// "1124" --> "12th"
+// "2000" --> "20th"
+
+function whatCentury(year) {
+  // Extract the first two digits from the year
+  var century = Math.ceil(parseInt(year) / 100);
+
+  // Determine the appropriate suffix based on the century
+  var suffix;
+  if (century >= 11 && century <= 13) {
+    suffix = "th";
+  } else {
+    var lastDigit = century % 10;
+    switch (lastDigit) {
+      case 1:
+        suffix = "st";
+        break;
+      case 2:
+        suffix = "nd";
+        break;
+      case 3:
+        suffix = "rd";
+        break;
+      default:
+        suffix = "th";
+    }
+  }
+
+  // Concatenate the century and suffix
+  return century + suffix;
+}
