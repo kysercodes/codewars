@@ -346,3 +346,22 @@ function accum(s) {
 }
 
 console.log(accum("ZpglnRxqenU"))
+
+// 7kyu string problem 
+// Find the number with the most digits.
+
+// If two numbers in the argument array have the same number of digits, return the first one in the array.
+
+
+function findLongest(array){
+  // code here
+//  turn the number into a stirng
+//   test the string lenghth
+//   return the number
+   return array.reduce((curr,prev) => {
+      return prev.toString().length > curr.toString().length ? prev:curr
+   })
+}
+
+
+console.log(findLongest([8, 9000, 3000]))
