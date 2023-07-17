@@ -386,3 +386,22 @@ function isPangram(string) {
 
 const string = "The quick brown fox jumps over the lazy dog.";
 console.log(isPangram(string));
+
+
+// Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+// Example(Input => Output):
+// 35231 => [1,3,2,5,3]
+// 0 => [0] */
+function digitize(n) {
+  //code here
+  // reverse the string
+ let newN = n.toString().split("").reverse()
+  // return a new array
+ return newN.map((num) => {
+   return parseInt(num)
+ })
+}
+
+
+console.log(digitize(35231))
