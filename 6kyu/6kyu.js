@@ -405,3 +405,36 @@ function digitize(n) {
 
 
 console.log(digitize(35231))
+
+// this is a 7kyu array problem
+// Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+
+// For example, if this array were passed as an argument:
+
+// ["Telescopes", "Glasses", "Eyes", "Monocles"]
+
+// Your function would return the following array:
+
+// ["Eyes", "Glasses", "Monocles", "Telescopes"]
+
+// All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.
+
+// iterate over the array 
+// get the length of each string
+// look up the sort method 
+// return a new array
+
+function sortByLength (array) {
+  // Return an array containing the same strings, ordered from shortest to longest
+  return array.sort((a,b) => {
+    return a.length - b.length;
+  })
+};
+
+
+
+
+
+
+
+console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]))
