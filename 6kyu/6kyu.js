@@ -455,17 +455,18 @@ console.log(sortByLength(["Telescopes", "Glasses", "Eyes", "Monocles"]))
 // Another example (just to make sure it is clear):
 
 // gimme([5, 10, 14]) => 1
-
+// chatgpt correction
+// The code you provided is almost correct. However, there is a small mistake in the 
+// condition inside the findIndex function. Instead of returning the item itself, 
+// you should return true or false based on whether the item satisfies the condition
 const gimme = function (inputArray) {
 
-  let highNum = Math.max(...inputArray)
-  let lowNum = Math.min(...inputArray)
-  
-  return inputArray.findIndex((item)  => {
-  
-    if (item > lowNum && item < highNum) {
-      return item
-     }
-    })
+  let highNum = Math.max(...triplet);
+  let lowNum = Math.min(...triplet);
+
+  return triplet.findIndex((item) => {
+    // return true or false
+    return item > lowNum && item < highNum;
+  });
   
   };
