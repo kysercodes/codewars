@@ -513,3 +513,14 @@ console.log(adjacentElementsProduct([1, 2, 3,7]))
 // {"Java": 10, "Ruby": 80, "Python": 65}    -->  ["Ruby", "Python"]
 // {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
 // {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
+function myLanguages(results) {
+  let languages = Object.keys(results);
+  languages = languages.filter((num) => {
+     if(results[num] >= 60) {
+       return num
+     }
+   })
+    return languages.sort((a,b) => {
+     return results[b] - results[a]
+    })
+  }
