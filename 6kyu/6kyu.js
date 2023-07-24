@@ -524,3 +524,38 @@ function myLanguages(results) {
      return results[b] - results[a]
     })
   }
+
+  // There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+// findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+// findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+// It’s guaranteed that array contains at least 3 numbers.
+
+
+
+function findUniq(arr) {
+  for (let i = 0; i < arr.length; i++) {
+     if (arr[i] !== arr[i + 1] && arr[i] !== arr[i + 2]) {
+       return arr[i];
+     }
+   }
+   // test which has the element that im looking for
+ 
+ }
+ 
+ console.log(findUniq([ 1, 1, 1, 2, 1, 1]))
+
+
+
+
+// 1. `arr.sort((a, b) => a - b);`: This line sorts the array `arr` in ascending 
+// order. The `sort()` method takes a compare function as an argument, which is 
+// used to determine the order of elements. The `(a, b) => a - b` compare 
+// function sorts the elements in ascending order.
+
+// 2. `return arr[0] == arr[1] ? arr.pop() : arr[0];`: After sorting, if the 
+// first and second elements are equal, it means that the unique number is at 
+// the end of the array (since all other elements are equal and grouped together). 
+// In this case, it uses `arr.pop()` to remove and return the last element, which is 
+// the unique number. If the first and second elements are not equal, then the unique
+//  number is at the beginning of the array, so it simply returns `arr[0]`.
