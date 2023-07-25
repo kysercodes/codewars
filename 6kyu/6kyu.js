@@ -559,3 +559,33 @@ function findUniq(arr) {
 // In this case, it uses `arr.pop()` to remove and return the last element, which is 
 // the unique number. If the first and second elements are not equal, then the unique
 //  number is at the beginning of the array, so it simply returns `arr[0]`.
+
+
+// Complete the method which accepts an array of integers, and returns one of the following:
+//  7kyu array
+// "yes, ascending" - if the numbers in the array are sorted in an ascending order
+// "yes, descending" - if the numbers in the array are sorted in a descending order
+// "no" - otherwise
+// You can assume the array will always be valid, and there will always be one correct answer.
+
+function isSortedAndHow(array) {
+  let ascending = true;
+  let descending = true;
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > array[i - 1]) {
+      descending = false;
+    }
+    if (array[i] < array[i - 1]) {
+      ascending = false;
+    }
+  }
+
+  if (ascending) {
+    return "ascending";
+  } else if (descending) {
+    return "descending";
+  } else {
+    return "no";
+  }
+}
