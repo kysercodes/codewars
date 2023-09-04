@@ -613,3 +613,31 @@ function solution(str){
 
 
 console.log(solution("abcdef"))
+
+
+// 7kyu string
+// Given a string made up of letters a, b, and/or c, switch the position of letters a and b (change a to b and vice versa). Leave any incidence of c untouched.
+
+// Example:
+
+// 'acb' --> 'bca'
+// 'aabacbaa' --> 'bbabcabb'
+
+function switcheroo(x){
+ const newArr = [];
+  x.split("").forEach((letter) => {
+    if(letter === 'a') {
+      newArr.push("b")
+    }else if( letter === "b") {
+      newArr.push("a")
+    } else if(letter === "c") {
+      newArr.push("c")
+    }
+  })
+  
+  return newArr.join("")
+  
+}
+
+
+console.log(switcheroo('abc'))
