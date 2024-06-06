@@ -700,3 +700,18 @@ function shortcut (string) {
 }
 
 console.log(shortcut("how are you today?"))
+
+// 
+function remove (string) {
+  //coding and coding....
+  const newStr = string.split("")
+  if(newStr[newStr.length - 1] === "!") {
+     newStr.pop()
+    return newStr.join("")
+  }
+  
+  // return newStr.join("")
+  return  newStr.join("")
+}
+
+console.log(remove("!Hi"))
