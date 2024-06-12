@@ -790,3 +790,22 @@ function setAlarm(employed, vacation){
   
   return false
 }
+
+// Write a function which calculates the average of the numbers in a given list.
+
+// Note: Empty arrays should return 0.
+
+function findAverage(array) {
+  // your code here
+  if(array.length === 0) {
+    return 0
+  }
+  
+  let avg = 0
+  for(let i = 0; i < array.length; i++) {
+    avg += array[i]
+  }
+  
+  return avg/array.length
+  }
+  (findAverage([1,1,1]), 1);
