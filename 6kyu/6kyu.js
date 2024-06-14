@@ -834,3 +834,18 @@ const number = function(busStops){
                 // 11      5     15     20    17
 console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
  
+
+// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+// Return your answer as a number.
+function sumMix(x){
+  let sum = 0
+ for(let i = 0; i < x.length; i++) {
+   if(typeof x[i] === "number") {
+      sum += x[i]
+   } else{
+     sum += parseInt(x[i])
+   }
+ }
+ return sum
+}
