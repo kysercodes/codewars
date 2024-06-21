@@ -917,3 +917,70 @@ console.log(uniqueInOrder('AAAABBBCCDAABBB') )
 //   "***********"
 // ]
 
+function towerBuilder(nFloors) {
+  // build here
+   const arr = [];
+    let width = nFloors * 2 - 1; // Width of the bottom floor
+
+    for (let i = 0; i < nFloors; i++) {
+        let stars = '*'.repeat(2 * i + 1); // Number of stars in the current floor
+        let spaces = ' '.repeat((width - stars.length) / 2); // Calculate spaces to center the stars
+        arr.push(spaces + stars + spaces); // Build the floor
+    }
+
+    return arr;
+}
+
+console.log(towerBuilder(5))
+
+// Rock Paper Scissors
+// Let's play! You have to return which player won! In case of a draw return Draw!.
+
+// Examples(Input1, Input2 --> Output):
+
+// "scissors", "paper" --> "Player 1 won!"
+// "scissors", "rock" --> "Player 2 won!"
+// "paper", "paper" --> "Draw!"
+
+const rps = (p1, p2) => {
+  if(p1 === p2) {
+    return 'Draw!'
+  }
+  if(p1=== "rock" && p2 === "scissors") {
+    return "Player 1 won!"
+  }
+  if(p1=== "scissors" && p2 === "paper") {
+    return "Player 1 won!"
+  }
+
+  if(p1=== "paper" && p2 === "rock") {
+    return "Player 1 won!"
+  }//   player 2 win
+
+   if(p1=== "scissors" && p2 === "rock") {
+    return "Player 2 won!"
+  }
+  
+  if(p1=== "paper" && p2 === "scissors") {
+    return "Player 2 won!"
+  }
+  if(p1=== "rock" && p2 === "paper") {
+    return "Player 2 won!"
+  }
+}
+
+// You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
+
+// You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+
+// Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
+
+function mergeArrays(arr1, arr2) {
+  const mergedArr = arr1.concat(arr2).sort((a,b) => { return a-b})
+   return mergedArr.filter((el,idx,arr) => {
+   return idx === 0 || arr[idx] !== arr[idx - 1]
+  })
+   // console.log(mergedArr)
+ }
+ console.log(mergeArrays([1,2,3,4], [5,6,7,8]))
+ console.log(mergeArrays([1,3,5,7,9,11,12], [1,2,3,4,5,10,12]))
