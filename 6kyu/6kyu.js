@@ -984,3 +984,46 @@ function mergeArrays(arr1, arr2) {
  }
  console.log(mergeArrays([1,2,3,4], [5,6,7,8]))
  console.log(mergeArrays([1,3,5,7,9,11,12], [1,2,3,4,5,10,12]))
+
+
+//  You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+
+// As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+// Example (Input --> Output)
+
+// "Hello World" --> "World Hello"
+// "Hi There." --> "There. Hi"
+
+function reverse(string){
+  //your code here
+  const newString = string.split(" ")
+  console.log(newString)
+  const newArr = []
+  
+  for (let i = newString.length - 1; i >= 0; i--) {
+    newArr.push(newString[i]);
+}
+  return newArr.join(" ")
+}
+
+console.log(reverse('I am an expert at this'))
+
+// The wide-mouth frog is particularly interested in the eating habits of other creatures.
+
+// He just can't stop asking the creatures he encounters what they like to eat. But, then he meets the alligator who just LOVES to eat wide-mouthed frogs!
+
+// When he meets the alligator, it then makes a tiny mouth.
+
+// Your goal in this kata is to create complete the mouth_size method this method takes one argument animal which corresponds to the animal encountered by the frog. If this one is an alligator (case-insensitive) return small otherwise return wide.
+
+function mouthSize(animal) {
+  // code here
+  if(animal.toLowerCase() === "alligator") {
+    return "small";
+  }else{
+    return "wide"
+  }
+}
+
+console.log(mouthSize("toucan"))
