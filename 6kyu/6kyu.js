@@ -1070,3 +1070,19 @@ if( current ==='green'){
 }
 
 console.log(updateLight("green"))
+
+
+
+// Given a list of digits, return the smallest number that could be formed from these digits, using the digits only once (ignore duplicates).
+
+function minValue(values){
+  //your code here
+   let uniqueDigits = [...new Set(values)];
+  
+  uniqueDigits.sort((a,b) => a - b)
+  let smallestNumberStr = uniqueDigits.join('');
+  
+  return Number(smallestNumberStr)
+}
+
+console.log(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]))
