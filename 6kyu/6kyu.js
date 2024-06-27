@@ -1086,3 +1086,18 @@ function minValue(values){
 }
 
 console.log(minValue([1, 9, 1, 3, 7, 4, 6, 6, 7]))
+
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+function paperwork(n, m) {
+  if(n < 0 || m < 0) {
+    return 0
+  }
+  return n * m
+}
+// n is the class mates
+// m is the number of pages
+
+console.log(paperwork(-5,-5))
