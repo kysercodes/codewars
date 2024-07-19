@@ -1299,3 +1299,25 @@ function calculateYears(principal, interest, tax, desired) {
 }
 
 calculateYears(1000, 0.05, 0.18, 1100)
+
+// Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+// Examples:
+// a = "xyaabbbccccdefww"
+// b = "xxxxyyyyabklmopq"
+// longest(a, b) -> "abcdefklmopqwxy"
+
+// a = "abcdefghijklmnopqrstuvwxyz"
+// longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+function longest(s1, s2) {
+  // your code
+// join the strings
+//   filter out  any duplicates 
+//   order them alphabetically
+  let newStr = new Set (s1.concat(s2))
+  newStr = [...newStr].sort().join("")
+  return newStr
+}
+
+console.log(longest("inmanylanguages", "theresapairoffunctions"))
