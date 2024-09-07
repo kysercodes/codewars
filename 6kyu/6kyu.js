@@ -1460,12 +1460,14 @@ console.log(stringy(4))
 function firstNonRepeatingLetter(s) {
   // Add your code here
   for (let i = 0; i < s.length; i++) {
-        let char = s[i];
-        // Check if the first and last occurrence of the character are the same
-        if (s.indexOf(char) == s.lastIndexOf(char)) {
-            return char;  // Return the first repeating character
-        }
+    let char = s[i];
+    let lowerChar = char.toLowerCase();  // Convert character to lowercase
+
+    // Check if the first and last occurrence of the lowercase character are the same
+    if (s.toLowerCase().indexOf(lowerChar) === s.toLowerCase().lastIndexOf(lowerChar)) {
+      return char;  // Return the character in its original case
     }
+  }
     return "";  // Return null if no repeating character is found
 }
 
