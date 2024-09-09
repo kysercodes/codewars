@@ -1472,3 +1472,27 @@ function firstNonRepeatingLetter(s) {
 }
 
 console.log(firstNonRepeatingLetter("stress"))
+
+// If you can't sleep, just count sheep!!
+
+// Task:
+// Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+var countSheep = function (num){
+  //your code here
+  if(num === 0){
+    return ""
+  }
+  let count = 0;
+  let sheeps = "";
+
+while (count < num) {
+  ;
+  count++;  // Increment count to avoid infinite loop
+  sheeps += `${count.toString()} sheep...`      
+}
+  console.log(sheeps)
+
+}
+ 
+
+console.log(countSheep(3))
