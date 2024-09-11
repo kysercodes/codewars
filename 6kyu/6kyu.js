@@ -1490,9 +1490,32 @@ while (count < num) {
   count++;  // Increment count to avoid infinite loop
   sheeps += `${count.toString()} sheep...`      
 }
-  console.log(sheeps)
-
+  console.log(sheeps(5))
 }
  
 
 console.log(countSheep(3))
+
+// / Words are separated by exactly one space and there are no leading or trailing spaces.
+
+// // Example(Input --> Output):
+
+// // "The greatest victory is that which requires no battle" --> "battle no requires w
+
+// function reverseWords(str){
+// const newStr =  str.split(" ")
+//  return newStr.reverse().join(" ")
+  
+
+// }
+
+// console.log(reverseWords("yoda doesn't speak like this"))
+
+function reverseWords(str){
+  const newStr =  str.split(" ")
+   return newStr.reverse().join(" ")
+    
+  
+  }
+  
+  console.log(reverseWords("yoda doesn't speak like this"))
