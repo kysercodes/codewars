@@ -1601,3 +1601,19 @@ function shorterReverseLonger(a,b){
 }
 
 console.log(shorterReverseLonger("first", "abcde"))
+
+// Modify the spacify function so that it returns the given string with spaces inserted between each character.
+
+// spacify("hello world") // returns "h e l l o   w o r l d"
+
+function spacify(str) {
+  
+  console.log(str.split("").join(" "))
+  
+  // turn the string into an array
+  // put space between characters
+  // turn back into string
+  // return 
+}
+
+console.log(spacify('hello world'))
